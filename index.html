@@ -3,37 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Calculator</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Space Invader Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('space-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            font-size: 4em;
+            margin: 0.5em 0;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 0.5em 0;
+        }
+        .button {
+            padding: 1em 2em;
+            font-size: 1.5em;
+            color: white;
+            background-color: #ff5733;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #c70039;
+        }
+        .stars {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            background: transparent;
+            box-shadow: 1000px 2000px white, 1500px 300px white, 2000px 1000px white;
+            animation: animStar 50s linear infinite;
+        }
+        @keyframes animStar {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-2000px); }
+        }
+    </style>
 </head>
 <body>
-    <div class="calculator">
-        <input type="text" class="calculator-screen" id="screen" disabled />
-        <div class="calculator-keys">
-            <button type="button" class="operator" value="+">+</button>
-            <button type="button" class="operator" value="-">-</button>
-            <button type="button" class="operator" value="*">&times;</button>
-            <button type="button" class="operator" value="/">&divide;</button>
-
-            <button type="button" value="7">7</button>
-            <button type="button" value="8">8</button>
-            <button type="button" value="9">9</button>
-
-            <button type="button" value="4">4</button>
-            <button type="button" value="5">5</button>
-            <button type="button" value="6">6</button>
-
-            <button type="button" value="1">1</button>
-            <button type="button" value="2">2</button>
-            <button type="button" value="3">3</button>
-
-            <button type="button" value="0">0</button>
-            <button type="button" class="decimal" value=".">.</button>
-            <button type="button" class="all-clear" value="all-clear">AC</button>
-
-            <button type="button" class="equal-sign" value="=">=</button>
-        </div>
+    <div class="stars"></div>
+    <div class="container">
+        <h1>Space Invader Game</h1>
+        <p>Defend the galaxy from the alien invasion!</p>
+        <button class="button" onclick="startGame()">Start Game</button>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        function startGame() {
+            // Add logic to start the game
+            alert("Game is starting!");
+        }
+    </script>
 </body>
 </html>
